@@ -1578,8 +1578,8 @@ function makeCatAxis(opts: IChartOptsLib, axisId: string, valAxisId: string): st
 		strXml += '  <c:tickLblPos val="nextTo"/>'
 	} else {
 		strXml += '  <c:majorTickMark val="' + (opts.catAxisMajorTickMark || 'out') + '"/>'
-		strXml += '  <c:minorTickMark val="' + (opts.catAxisMajorTickMark || 'none') + '"/>'
-		strXml += '  <c:tickLblPos val="' + (opts.catAxisLabelPos || (opts.barDir === 'col' ? 'low' : 'nextTo')) + '"/>'
+		strXml += '  <c:minorTickMark val="' + (opts.catAxisMinorTickMark || 'none') + '"/>'
+		strXml += '  <c:tickLblPos val="' + (opts.catAxisLabelPos || opts.barDir === 'col' ? 'low' : 'nextTo') + '"/>'
 	}
 	strXml += '  <c:spPr>'
 	strXml += '    <a:ln w="' + (opts.catAxisLineSize !== undefined ? valToPts(opts.catAxisLineSize) : 12700) + '" cap="flat">'
